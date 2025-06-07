@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                // Checkout your GitHub repo
+                git branch: 'main', url: 'https://github.com/yourusername/your-repo.git'
+            }
+        }
+        stage('Build / Print files') {
+            steps {
+                // Just list files (you can replace with build commands)
+                sh 'ls -la'
+            }
+        }
+    }
+}
